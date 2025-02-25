@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./styles.css";
+import CallButton from "./call-button/page";
 
 export default function Home() {
   const progressCircle = useRef(null);
@@ -35,18 +36,12 @@ export default function Home() {
         <SwiperSlide>
           <img src="/home4.png" alt="Home 4" />
         </SwiperSlide>
-        {/* <div className="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 48 48" ref={progressCircle}>
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-          <span ref={progressContent}></span>
-        </div> */}
       </Swiper>
     );
   };
   return (
     <>
-      <div className="bg-white">
+      <div className="z-0">
         <div>Welcome to Q Nine and Hair Salon!</div>
         <ImageCarousel />
         <p>
@@ -57,6 +52,9 @@ export default function Home() {
           and relaxation.
         </p>
         <Link href="/about">View More</Link>
+      </div>
+      <div className="">
+        <CallButton />
       </div>
     </>
   );
