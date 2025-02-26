@@ -6,7 +6,7 @@ export default function ContactUs() {
       <div>Call Us</div>
       <div>Email Us</div>
       <label>Your Name</label>
-      <textarea>Send Message</textarea>
+      <p>Send Message</p>
     </>
   );
 }
