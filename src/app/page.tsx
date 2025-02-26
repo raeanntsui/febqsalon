@@ -53,8 +53,9 @@ export default function Home() {
   return (
     <>
       <div className="z-0">
-        <div>Welcome to Nine Hair and Nails Salon!</div>
-        <ImageCarousel />
+        <div className="py-4">
+          <ImageCarousel />
+        </div>
         <div className="flex items-center gap-4 place-content-center py-3">
           <hr className="border-t-2 border-gray-300 my-4" />
           <svg
