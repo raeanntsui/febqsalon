@@ -1,15 +1,15 @@
-"use client";
-import { useRouter } from "next/navigation";
+// "use client";
+// import { useRouter } from "next/navigation";
 
 export default function CallButton() {
-  const router = useRouter();
+  //   const router = useRouter();
   const handleClick = () => {
     alert("Feature coming soon");
   };
 
-  const handleNavigation = () => {
-    router.push("/booking");
-  };
+  //   const handleNavigation = () => {
+  //     router.push("/booking");
+  //   };
   return (
     <>
       <div className="fixed bottom-4 right-4 z-50 grid grid-cols-1 grid-rows-2 gap-4">
@@ -20,7 +20,8 @@ export default function CallButton() {
         </button>
         <button
           className="bg-red-500 rounded-xl text-white p-2 hover:bg-red-700 flex items-center gap-2 drop-shadow-md"
-          onClick={handleNavigation}>
+          //   onClick={handleNavigation}
+        >
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
