@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
 import "./globals.css";
 import Header from "./header/page";
+import CallButton from "./call-button/page";
 
 const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${lexend.variable} antialiased`}>
         <Header />
+        <CallButton />
         {children}
       </body>
     </html>
