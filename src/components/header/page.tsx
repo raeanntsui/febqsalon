@@ -1,17 +1,30 @@
-import Link from "next/link";
 export default function Header() {
+  const linksLeft = [
+    { name: "Home", url: "/home" },
+    { name: "About Us", url: "/about" },
+    { name: "Services", url: "/services" },
+  ];
+  const linksRight = [
+    { name: "Booking", url: "/booking" },
+    { name: "Gallery", url: "/gallery" },
+    { name: "Contact Us", url: "/contactus" },
+  ];
   return (
     <>
-      <div className="flex flex-row justify-between p-4 items-center  bg-[#E2D0BE]">
-        <Link href="/">Home</Link>
-        <Link href="/about">About Us</Link>
-        <Link href="/services">Services</Link>
+      <div className="flex flex-row justify-between items-center bg-[#E2D0BE] sticky top-0 z-10">
+        {linksLeft.map((link, idx) => (
+          <a href={link.url} key={idx} className="font-bold">
+            {link.name}
+          </a>
+        ))}
         <a href="/">
           <img className="h-24" src="/qninebeautysalonlogo-transparent.png" />
         </a>
-        <Link href="/booking">Booking</Link>
-        <Link href="/gallery">Gallery</Link>
-        <Link href="/contactus">Contact Us</Link>
+        {linksRight.map((link, idx) => (
+          <a href={link.url} key={idx} className="font-bold">
+            {link.name}
+          </a>
+        ))}
       </div>
     </>
   );

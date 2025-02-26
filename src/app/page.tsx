@@ -69,7 +69,7 @@ export default function Home() {
               clipRule="evenodd"
             />
           </svg>{" "}
-          <h2 className="text-center py-4">
+          <h2 className="text-center py-4 font-bold text-2xl">
             WELCOME TO <br></br>NINE HAIR & NAILS SALON
           </h2>
           <svg
