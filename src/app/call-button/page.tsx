@@ -14,12 +14,12 @@ export default function CallButton() {
     <>
       <div className="fixed bottom-4 right-4 z-50 grid grid-cols-1 grid-rows-2 gap-4">
         <button
-          className="bg-red-500 rounded-xl text-white p-2 hover:bg-red-700 border-solid border-4 border-white"
+          className="bg-red-500 rounded-xl text-white p-2 hover:bg-red-700 drop-shadow-xl"
           onClick={handleClick}>
           Booking
         </button>
         <button
-          className="bg-red-500 rounded-xl text-white p-2 hover:bg-red-700 flex items-center gap-2"
+          className="bg-red-500 rounded-xl text-white p-2 hover:bg-red-700 flex items-center gap-2 drop-shadow-md"
           onClick={handleNavigation}>
           <div>
             <svg

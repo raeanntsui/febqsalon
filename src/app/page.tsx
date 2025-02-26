@@ -7,8 +7,24 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./styles.css";
 import CallButton from "./call-button/page";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+  const handleNavigation = () => {
+    router.push("/services");
+  };
+  const services = [
+    { name: "Facial", image: "home-facial.jpg" },
+    { name: "Manicure", image: "home-manicure.jpg" },
+    { name: "Dipping Powder", image: "home-dp.jpg" },
+    { name: "Pedicure", image: "home-pedi.jpg" },
+    { name: "Hair Cut", image: "home-hc.png" },
+    { name: "Waxing", image: "home-waxing.jpg" },
+    { name: "Eyelash Extension", image: "home-ee.jpg" },
+  ];
+
+  const carouselImages = ["/home1.png", "/home2.png"];
   const ImageCarousel = () => {
     return (
       <Swiper
@@ -52,7 +68,7 @@ export default function Home() {
               clipRule="evenodd"
             />
           </svg>{" "}
-          <h2 className="text-center">
+          <h2 className="text-center py-4">
             WELCOME TO <br></br>NINE HAIR & NAILS SALON
           </h2>
           <svg
@@ -75,11 +91,22 @@ export default function Home() {
           and relaxation.
         </p>
       </div>
-      <Link href="/about" className="flex justify-center">
+      <Link href="/about" className="flex justify-center py-4">
         View More
       </Link>
       <div className="">
         <CallButton />
+      </div>
+      <div className="grid grid-cols-4 grid-rows-3 gap-4 ">
+        {services.map((service, idx) => (
+          <div key={idx} className="grid place-content-center gap-2 ">
+            <img className="rounded-md object-fill" src={service.image} />
+            <h2 className="text-center font-bold">{service.name}</h2>
+            <button onClick={handleNavigation} className="">
+              View More
+            </button>
+          </div>
+        ))}
       </div>
     </>
   );
