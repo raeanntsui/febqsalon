@@ -1,6 +1,6 @@
 export default function Header() {
   const linksLeft = [
-    { name: "Home", url: "/home" },
+    { name: "Home", url: "/" },
     { name: "About Us", url: "/about" },
     { name: "Services", url: "/services" },
   ];
