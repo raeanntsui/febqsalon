@@ -36,18 +36,18 @@ export default function Home() {
   ];
 
   const gallerySample = [
-    { image: "home-sample-1.jpg" },
-    { image: "home-sample-2.jpg" },
-    { image: "home-sample-3.jpg" },
-    { image: "home-sample-4.jpg" },
-    { image: "home-sample-5.jpg" },
-    { image: "home-sample-6.jpg" },
-    { image: "home-sample-7.jpg" },
-    { image: "home-sample-8.jpg" },
-    { image: "home-sample-9.jpg" },
-    { image: "home-sample-10.jpg" },
-    { image: "home-sample-11.jpg" },
-    { image: "home-sample-12.jpg" },
+    { image: "/home-sample-1.jpg" },
+    { image: "/home-sample-2.jpg" },
+    { image: "/home-sample-3.jpg" },
+    { image: "/home-sample-4.jpg" },
+    { image: "/home-sample-5.jpg" },
+    { image: "/home-sample-6.jpg" },
+    { image: "/home-sample-7.jpg" },
+    { image: "/home-sample-8.jpg" },
+    { image: "/home-sample-9.jpg" },
+    { image: "/home-sample-10.jpg" },
+    { image: "/home-sample-11.jpg" },
+    { image: "/home-sample-12.jpg" },
   ];
 
   const ImageCarousel = () => {
