@@ -3,26 +3,19 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import Zoom from "react-medium-image-zoom";
-import "react-medium-image-zoom/dist/styles.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import "react-medium-image-zoom/dist/styles.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./styles.css";
-import CallButton from "./call-button/page";
-import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const router = useRouter();
-  const handleNavigation = () => {
-    router.push("/services");
-  };
-
   const homeBannerImages = [
-    { image: "/home1.png" },
-    { image: "/home2.png" },
-    { image: "/home3.png" },
-    { image: "/home4.png" },
+    { image: "/home1.png", altText: "Red nail manicure" },
+    { image: "/home2.png", altText: "Natural pedicure" },
+    { image: "/home3.png", altText: "Hair waxing" },
+    { image: "/home4.png", altText: "Spa treatment" },
   ];
 
   const services = [
@@ -36,29 +29,29 @@ export default function Home() {
   ];
 
   const gallerySample = [
-    { image: "/home-sample-1.jpg" },
-    { image: "/home-sample-2.jpg" },
-    { image: "/home-sample-3.jpg" },
-    { image: "/home-sample-4.jpg" },
-    { image: "/home-sample-5.jpg" },
-    { image: "/home-sample-6.jpg" },
-    { image: "/home-sample-7.jpg" },
-    { image: "/home-sample-8.jpg" },
-    { image: "/home-sample-9.jpg" },
-    { image: "/home-sample-10.jpg" },
-    { image: "/home-sample-11.jpg" },
-    { image: "/home-sample-12.jpg" },
+    { image: "/home-sample-1.jpg", altText: "Men's haircut back view" },
+    { image: "/home-sample-2.jpg", altText: "Hair before and after treatment" },
+    { image: "/home-sample-3.jpg", altText: "Side profile of haircut" },
+    { image: "/home-sample-4.jpg", altText: "Hair cut from back view" },
+    { image: "/home-sample-5.jpg", altText: "Men's haircut from side view" },
+    { image: "/home-sample-6.jpg", altText: "Multiple hair styles shown" },
+    { image: "/home-sample-7.jpg", altText: "Hair cut and styled with curls" },
+    { image: "/home-sample-8.jpg", altText: "Hair cut and styled with curls" },
+    { image: "/home-sample-9.jpg", altText: "Hair cut and styled with curls" },
+    { image: "/home-sample-10.jpg", altText: "Straight hair cut" },
+    { image: "/home-sample-11.jpg", altText: "Straight hair cut" },
+    { image: "/home-sample-12.jpg", altText: "Hair cut and styled with curls" },
   ];
 
   const ImageCarousel = () => {
     return (
       <Swiper
+        modules={[Autoplay, Pagination]}
         spaceBetween={50}
         slidesPerView={1}
         centeredSlides={true}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        modules={[Autoplay, Pagination]}
         className="mySwiper">
         {homeBannerImages.map((singleBanner, idx) => (
           <SwiperSlide key={idx}>
@@ -66,7 +59,7 @@ export default function Home() {
               src={singleBanner.image}
               width={500}
               height={500}
-              alt={singleBanner.image}
+              alt={singleBanner.altText}
             />
           </SwiperSlide>
         ))}
@@ -80,7 +73,7 @@ export default function Home() {
         {gallerySample.map((gallerySq, idx) => (
           <Zoom key={idx}>
             <Image
-              alt={gallerySq.image}
+              alt={gallerySq.altText}
               width={500}
               height={500}
               src={gallerySq.image}
@@ -93,9 +86,6 @@ export default function Home() {
   };
   return (
     <>
-      <div className="">
-        <CallButton />
-      </div>
       <div className="z-0">
         <div className="py-4">
           <ImageCarousel />
@@ -147,22 +137,21 @@ export default function Home() {
       <div className="grid grid-cols-4 grid-rows-2 gap-4 py-4 ">
         {services.map((service, idx) => (
           <div key={idx} className="grid place-content-center gap-2">
-            <Image
-              width={500}
-              height={500}
-              alt={service.image}
-              onClick={handleNavigation}
-              className="rounded-md object-fill cursor-pointer"
-              src={service.image}
-            />
-            <h2 className="text-center font-bold">{service.name}</h2>
-            <div className="flex justify-center">
-              <button
-                onClick={handleNavigation}
-                className="bg-white text-stone-600 hover:bg-stone-400 hover:text-white rounded-full px-3">
-                View More
-              </button>
-            </div>
+            <Link href="/services">
+              <Image
+                width={500}
+                height={500}
+                alt={service.image}
+                className="rounded-md object-fill cursor-pointer"
+                src={service.image}
+              />
+              <h2 className="text-center font-bold">{service.name}</h2>
+              <div className="flex justify-center">
+                <button className="bg-white text-stone-600 hover:bg-stone-400 hover:text-white rounded-full px-3">
+                  View More
+                </button>
+              </div>
+            </Link>
           </div>
         ))}
       </div>
