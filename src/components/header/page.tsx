@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 export default function Header() {
   const linksLeft = [
     { name: "Home", url: "/" },
@@ -13,17 +15,23 @@ export default function Header() {
     <>
       <div className="flex flex-row justify-between items-center bg-[#E2D0BE] sticky top-0 z-10">
         {linksLeft.map((link, idx) => (
-          <a href={link.url} key={idx} className="font-bold">
+          <Link href={link.url} key={idx} className="font-bold">
             {link.name}
-          </a>
+          </Link>
         ))}
-        <a href="/">
-          <img className="h-24" src="/qninebeautysalonlogo-transparent.png" />
-        </a>
+        <Link href="/">
+          <Image
+            width={100}
+            height={100}
+            alt="home"
+            className="h-24"
+            src="/qninebeautysalonlogo-transparent.png"
+          />
+        </Link>
         {linksRight.map((link, idx) => (
-          <a href={link.url} key={idx} className="font-bold">
+          <Link href={link.url} key={idx} className="font-bold">
             {link.name}
-          </a>
+          </Link>
         ))}
       </div>
     </>

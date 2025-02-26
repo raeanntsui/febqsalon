@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
@@ -18,35 +19,35 @@ export default function Home() {
   };
 
   const homeBannerImages = [
-    { image: "home1.png" },
-    { image: "home2.png" },
-    { image: "home3.png" },
-    { image: "home4.png" },
+    { image: "/home1.png" },
+    { image: "/home2.png" },
+    { image: "/home3.png" },
+    { image: "/home4.png" },
   ];
 
   const services = [
-    { name: "Facial", image: "home-facial.jpg" },
-    { name: "Manicure", image: "home-manicure.jpg" },
-    { name: "Dipping Powder", image: "home-dp.jpg" },
-    { name: "Pedicure", image: "home-pedi.jpg" },
-    { name: "Hair Cut", image: "home-hc.png" },
-    { name: "Waxing", image: "home-waxing.jpg" },
-    { name: "Eyelash Extension", image: "home-ee.jpg" },
+    { name: "Facial", image: "/home-facial.jpg" },
+    { name: "Manicure", image: "/home-manicure.jpg" },
+    { name: "Dipping Powder", image: "/home-dp.jpg" },
+    { name: "Pedicure", image: "/home-pedi.jpg" },
+    { name: "Hair Cut", image: "/home-hc.png" },
+    { name: "Waxing", image: "/home-waxing.jpg" },
+    { name: "Eyelash Extension", image: "/home-ee.jpg" },
   ];
 
   const gallerySample = [
-    { image: "home-sample-1.jpg" },
-    { image: "home-sample-2.jpg" },
-    { image: "home-sample-3.jpg" },
-    { image: "home-sample-4.jpg" },
-    { image: "home-sample-5.jpg" },
-    { image: "home-sample-6.jpg" },
-    { image: "home-sample-7.jpg" },
-    { image: "home-sample-8.jpg" },
-    { image: "home-sample-9.jpg" },
-    { image: "home-sample-10.jpg" },
-    { image: "home-sample-11.jpg" },
-    { image: "home-sample-12.jpg" },
+    { image: "/home-sample-1.jpg" },
+    { image: "/home-sample-2.jpg" },
+    { image: "/home-sample-3.jpg" },
+    { image: "/home-sample-4.jpg" },
+    { image: "/home-sample-5.jpg" },
+    { image: "/home-sample-6.jpg" },
+    { image: "/home-sample-7.jpg" },
+    { image: "/home-sample-8.jpg" },
+    { image: "/home-sample-9.jpg" },
+    { image: "/home-sample-10.jpg" },
+    { image: "/home-sample-11.jpg" },
+    { image: "/home-sample-12.jpg" },
   ];
 
   const ImageCarousel = () => {
@@ -61,7 +62,12 @@ export default function Home() {
         className="mySwiper">
         {homeBannerImages.map((singleBanner, idx) => (
           <SwiperSlide key={idx}>
-            <img src={singleBanner.image} />
+            <Image
+              src={singleBanner.image}
+              width={500}
+              height={500}
+              alt={singleBanner.image}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -73,7 +79,13 @@ export default function Home() {
       <div className="grid grid-cols-4 grid-rows-3 gap-3">
         {gallerySample.map((gallerySq, idx) => (
           <Zoom key={idx}>
-            <img src={gallerySq.image} className="rounded-md" />
+            <Image
+              alt={gallerySq.image}
+              width={500}
+              height={500}
+              src={gallerySq.image}
+              className="rounded-md"
+            />
           </Zoom>
         ))}
       </div>
@@ -135,7 +147,10 @@ export default function Home() {
       <div className="grid grid-cols-4 grid-rows-2 gap-4 py-4 ">
         {services.map((service, idx) => (
           <div key={idx} className="grid place-content-center gap-2">
-            <img
+            <Image
+              width={500}
+              height={500}
+              alt={service.image}
               onClick={handleNavigation}
               className="rounded-md object-fill cursor-pointer"
               src={service.image}
