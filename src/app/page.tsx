@@ -14,6 +14,14 @@ export default function Home() {
   const handleNavigation = () => {
     router.push("/services");
   };
+
+  const homeBannerImages = [
+    { image: "home1.png" },
+    { image: "home2.png" },
+    { image: "home3.png" },
+    { image: "home4.png" },
+  ];
+
   const services = [
     { name: "Facial", image: "home-facial.jpg" },
     { name: "Manicure", image: "home-manicure.jpg" },
@@ -24,7 +32,21 @@ export default function Home() {
     { name: "Eyelash Extension", image: "home-ee.jpg" },
   ];
 
-  const carouselImages = ["/home1.png", "/home2.png"];
+  const gallerySample = [
+    { image: "home-sample-1.jpg" },
+    { image: "home-sample-2.jpg" },
+    { image: "home-sample-3.jpg" },
+    { image: "home-sample-4.jpg" },
+    { image: "home-sample-5.jpg" },
+    { image: "home-sample-6.jpg" },
+    { image: "home-sample-7.jpg" },
+    { image: "home-sample-8.jpg" },
+    { image: "home-sample-9.jpg" },
+    { image: "home-sample-10.jpg" },
+    { image: "home-sample-11.jpg" },
+    { image: "home-sample-12.jpg" },
+  ];
+
   const ImageCarousel = () => {
     return (
       <Swiper
@@ -35,23 +57,19 @@ export default function Home() {
         pagination={{ clickable: true }}
         modules={[Autoplay, Pagination]}
         className="mySwiper">
-        <SwiperSlide>
-          <img src="/home1.png" alt="Home 1" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/home2.png" alt="Home 2" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/home3.png" alt="Home 3" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/home4.png" alt="Home 4" />
-        </SwiperSlide>
+        {homeBannerImages.map((singleBanner, idx) => (
+          <SwiperSlide key={idx}>
+            <img src={singleBanner.image} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     );
   };
   return (
     <>
+      <div className="">
+        <CallButton />
+      </div>
       <div className="z-0">
         <div className="py-4">
           <ImageCarousel />
@@ -92,21 +110,36 @@ export default function Home() {
           and relaxation.
         </p>
       </div>
-      <Link href="/about" className="flex justify-center py-4">
-        View More
-      </Link>
-      <div className="">
-        <CallButton />
+      <div className="flex justify-center py-4">
+        <Link
+          href="/about"
+          className="inline-flex justify-center py-3 bg-white text-stone-600 hover:bg-stone-400 hover:text-white rounded-full px-4 w-sm">
+          View More
+        </Link>
       </div>
-      <div className="grid grid-cols-4 grid-rows-3 gap-4 ">
+
+      <div className="grid grid-cols-4 grid-rows-2 gap-4 py-4 ">
         {services.map((service, idx) => (
-          <div key={idx} className="grid place-content-center gap-2 ">
-            <img className="rounded-md object-fill" src={service.image} />
+          <div key={idx} className="grid place-content-center gap-2">
+            <img
+              onClick={handleNavigation}
+              className="rounded-md object-fill cursor-pointer"
+              src={service.image}
+            />
             <h2 className="text-center font-bold">{service.name}</h2>
-            <button onClick={handleNavigation} className="">
-              View More
-            </button>
+            <div className="flex justify-center">
+              <button
+                onClick={handleNavigation}
+                className="bg-white text-stone-600 hover:bg-stone-400 hover:text-white rounded-full py-2 px-5">
+                View More
+              </button>
+            </div>
           </div>
+        ))}
+      </div>
+      <div className="grid grid-cols-4 grid-rows-3 gap-3">
+        {gallerySample.map((gallerySq, idx) => (
+          <img key={idx} src={gallerySq.image} className="rounded-md" />
         ))}
       </div>
     </>
