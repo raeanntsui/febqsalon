@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React from "react";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -63,6 +65,18 @@ export default function Home() {
           </SwiperSlide>
         ))}
       </Swiper>
+    );
+  };
+
+  const GalleryZoom = () => {
+    return (
+      <div className="grid grid-cols-4 grid-rows-3 gap-3">
+        {gallerySample.map((gallerySq, idx) => (
+          <Zoom key={idx}>
+            <img src={gallerySq.image} className="rounded-md" />
+          </Zoom>
+        ))}
+      </div>
     );
   };
   return (
@@ -130,18 +144,14 @@ export default function Home() {
             <div className="flex justify-center">
               <button
                 onClick={handleNavigation}
-                className="bg-white text-stone-600 hover:bg-stone-400 hover:text-white rounded-full py-2 px-5">
+                className="bg-white text-stone-600 hover:bg-stone-400 hover:text-white rounded-full px-3">
                 View More
               </button>
             </div>
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-4 grid-rows-3 gap-3">
-        {gallerySample.map((gallerySq, idx) => (
-          <img key={idx} src={gallerySq.image} className="rounded-md" />
-        ))}
-      </div>
+      <GalleryZoom />
     </>
   );
 }
