@@ -20,6 +20,7 @@ export default function About() {
         100 percent of your faith on us because your safety is our top priority.
         Nine Hair & Nails Salon- where you feel unique and special!{" "}
       </p>
+      <img src="/about.png" alt="about-photo" width={500} height={500} />
     </>
   );
 }
