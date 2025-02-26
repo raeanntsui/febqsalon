@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@mantine/core": "^7.17.0",
     "@mantine/hooks": "^7.17.0",
     "@tabler/icons-react": "^3.30.0",
