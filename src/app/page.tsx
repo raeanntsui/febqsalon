@@ -1,23 +1,19 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import Zoom from "react-medium-image-zoom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
 import "react-medium-image-zoom/dist/styles.css";
-import "swiper/css";
-import "swiper/css/pagination";
 import "./styles.css";
+import ImageCarousel from "./components/swiper";
+
+export const homeBannerImages = [
+  { image: "/home1.png", altText: "Red nail manicure" },
+  { image: "/home2.png", altText: "Natural pedicure" },
+  { image: "/home3.png", altText: "Hair waxing" },
+  { image: "/home4.png", altText: "Spa treatment" },
+];
 
 export default function Home() {
-  const homeBannerImages = [
-    { image: "/home1.png", altText: "Red nail manicure" },
-    { image: "/home2.png", altText: "Natural pedicure" },
-    { image: "/home3.png", altText: "Hair waxing" },
-    { image: "/home4.png", altText: "Spa treatment" },
-  ];
-
   const services = [
     { name: "Facial", image: "/home-facial.jpg" },
     { name: "Manicure", image: "/home-manicure.jpg" },
@@ -43,42 +39,35 @@ export default function Home() {
     { image: "/home-sample-12.jpg", altText: "Hair cut and styled with curls" },
   ];
 
-  const ImageCarousel = () => {
-    return (
-      <Swiper
-        modules={[Autoplay, Pagination]}
-        spaceBetween={50}
-        slidesPerView={1}
-        centeredSlides={true}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
-        pagination={{ clickable: true }}
-        className="mySwiper">
-        {homeBannerImages.map((singleBanner, idx) => (
-          <SwiperSlide key={idx}>
-            <Image
-              src={singleBanner.image}
-              width={500}
-              height={500}
-              alt={singleBanner.altText}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    );
-  };
-
   const GalleryZoom = () => {
     return (
       <div className="grid grid-cols-4 grid-rows-3 gap-3">
         {gallerySample.map((gallerySq, idx) => (
           <Zoom key={idx}>
-            <Image
-              alt={gallerySq.altText}
-              width={500}
-              height={500}
-              src={gallerySq.image}
-              className="rounded-md"
-            />
+            <div className="relative group">
+              <Image
+                alt={gallerySq.altText}
+                width={500}
+                height={500}
+                src={gallerySq.image}
+                className="rounded-md "
+              />
+              <div className="absolute bottom-1/2 left-1/2 hidden group-hover:block">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="white"
+                  viewBox="0 0 24 24"
+                  strokeWidth="3"
+                  stroke="currentColor"
+                  className="size-6">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607ZM10.5 7.5v6m3-3h-6"
+                  />
+                </svg>
+              </div>
+            </div>
           </Zoom>
         ))}
       </div>
@@ -86,8 +75,11 @@ export default function Home() {
   };
   return (
     <>
+      {/* <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1/2" />
+      </Head> */}
       <div className="z-0">
-        <div className="py-4">
+        <div className="py-2">
           <ImageCarousel />
         </div>
         <div className="flex items-center gap-4 place-content-center py-3">
