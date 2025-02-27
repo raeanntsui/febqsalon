@@ -20,11 +20,12 @@ export default function ImageCarousel() {
       className="mySwiper">
       {homeBannerImages.map((banner, idx) => (
         <SwiperSlide key={idx}>
-          <img
+          <Image
             src={banner.image}
             width={500}
             height={500}
             alt={banner.altText}
+            unoptimized
           />
         </SwiperSlide>
       ))}
