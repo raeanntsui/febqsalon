@@ -6,13 +6,6 @@ import "react-medium-image-zoom/dist/styles.css";
 import "./styles.css";
 import ImageCarousel from "./components/swiper";
 
-export const homeBannerImages = [
-  { image: "/home1.png", altText: "Red nail manicure" },
-  { image: "/home2.png", altText: "Natural pedicure" },
-  { image: "/home3.png", altText: "Hair waxing" },
-  { image: "/home4.png", altText: "Spa treatment" },
-];
-
 export default function Home() {
   const services = [
     { name: "Facial", image: "/home-facial.jpg" },

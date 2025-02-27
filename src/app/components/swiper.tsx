@@ -6,9 +6,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "@/app/styles.css";
 
-import { homeBannerImages } from "@/app/page";
-
 export default function ImageCarousel() {
+  const homeBannerImages = [
+    { url: "/home1.png", altText: "Red nail manicure" },
+    { url: "/home2.png", altText: "Natural pedicure" },
+    { url: "/home3.png", altText: "Hair waxing" },
+    { url: "/home4.png", altText: "Spa treatment" },
+  ];
+
   return (
     <Swiper
       modules={[Autoplay, Pagination]}
@@ -21,7 +26,7 @@ export default function ImageCarousel() {
       {homeBannerImages.map((banner, idx) => (
         <SwiperSlide key={idx}>
           <Image
-            src={banner.image}
+            src={banner.url}
             width={500}
             height={500}
             alt={banner.altText}
