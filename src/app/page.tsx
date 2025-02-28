@@ -140,7 +140,62 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <GalleryZoom />
+      <div className="grid grid-cols-2 grid-rows-1">
+        <div>
+          <GalleryZoom />
+        </div>
+        <div className="">
+          <div>
+            <h1 className="text-center font-bold text-lg">
+              NINE HAIR & NAILS SALON
+            </h1>
+          </div>
+          <section className="max-w-md mt-6">
+            <h2 className="font-semibold mb-2">Location 01</h2>
+
+            <div className="flex justify-start gap-5">
+              <div>
+                Address <br />
+                Phone <br />
+                Email <br />
+              </div>
+              <div>
+                942 E El Camino Real, Sunnyvale, CA 94087 <br />
+                669-649-9639 <br />
+                qninebeautysalon@gmail.com
+              </div>
+            </div>
+          </section>
+
+          <section className="max-w-md mt-6">
+            <h2 className="font-semibold ">Location 02</h2>
+            <div className="flex justify-start gap-5">
+              <div>
+                Address <br />
+                Phone <br />
+              </div>
+              <div>
+                938 E El Camino Real, Sunnyvale, CA 94087 <br />
+                408-739-2960
+              </div>
+            </div>
+          </section>
+
+          <section className="max-w-md mt-6">
+            <h1 className="font-semibold mb-2">BUSINESS HOURS</h1>
+            <div className="flex justify-start gap-5">
+              <div>
+                Mon - Sat <br />
+                Sunday
+              </div>
+              <div>
+                10:00am to 7:00pm <br />
+                Closed
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
     </>
   );
 }
