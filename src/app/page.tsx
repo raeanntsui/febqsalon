@@ -183,7 +183,7 @@ export default function Home() {
             <h2 className="font-semibold mb-2">Location 01</h2>
 
             <div className="flex justify-start gap-5">
-              <div className="font-semibold">
+              <div className="font-semibold w-20">
                 Address <br />
                 Phone <br />
                 Email <br />
@@ -199,7 +199,7 @@ export default function Home() {
           <section className="max-w-md mt-6">
             <h2 className="font-semibold mb-2 ">Location 02</h2>
             <div className="flex justify-start gap-5">
-              <div className="font-semibold">
+              <div className="font-semibold w-20">
                 Address <br />
                 Phone <br />
               </div>
@@ -213,7 +213,7 @@ export default function Home() {
           <section className="max-w-md mt-6">
             <h1 className="font-semibold mb-2">BUSINESS HOURS</h1>
             <div className="flex justify-start gap-5">
-              <div className="font-semibold">
+              <div className="font-semibold w-20">
                 Mon - Sat <br />
                 Sunday
               </div>
