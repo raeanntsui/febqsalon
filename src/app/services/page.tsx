@@ -35,7 +35,7 @@ export default function Services() {
       </div>
       <div>
         {facialTreatments.map((facialTreatment, idx) => (
-          <div>{facialTreatment.serviceName}</div>
+          <div key={idx}>{facialTreatment.serviceName}</div>
         ))}
       </div>
     </>
