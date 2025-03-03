@@ -35,8 +35,8 @@ export default function Home() {
   const GalleryZoom = () => {
     return (
       <div className="grid grid-cols-4 grid-rows-3 gap-3">
-        {gallerySample.map((gallerySq, idx) => (
-          <Zoom key={idx}>
+        {gallerySample.map((gallerySq, index) => (
+          <Zoom key={index}>
             <div className="relative group">
               <Image
                 alt={gallerySq.altText}
@@ -121,8 +121,8 @@ export default function Home() {
       </div>
 
       <div className="grid grid-cols-4 grid-rows-2 gap-4 py-4 ">
-        {services.map((service, idx) => (
-          <div key={idx} className="grid place-content-center gap-2">
+        {services.map((service, index) => (
+          <div key={index} className="grid place-content-center gap-2">
             <Link href="/services">
               <Image
                 width={500}

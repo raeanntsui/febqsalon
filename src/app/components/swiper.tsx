@@ -23,8 +23,8 @@ export default function ImageCarousel() {
       autoplay={{ delay: 2500, disableOnInteraction: false }}
       pagination={{ clickable: true }}
       className="mySwiper">
-      {homeBannerImages.map((banner, idx) => (
-        <SwiperSlide key={idx}>
+      {homeBannerImages.map((banner, index) => (
+        <SwiperSlide key={index}>
           <Image
             src={banner.url}
             width={500}
