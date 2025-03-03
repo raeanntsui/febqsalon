@@ -1,24 +1,24 @@
 export default function Services() {
   const facialTreatments = [
     {
-      serviceName: "Facial",
+      serviceTitle: "FACIAL",
       serviceSubtitle:
         "All nature skincare products are used for long-term results.",
-      subTreatment: [
+      facialTmnt: [
         {
-          subTreatName: "Basic Facial (60 minutes)",
+          facialType: "Basic Facial (60 minutes)",
           description:
             "Begin with examining and discussing specific concerns. Remove makeup and clean the face. Exfoliate and steam. Hot towel relaxation. Then massage and apply point pressure to promote blood circulation. Continue with oxygenating the skin and apply the appropriate mask specific to the skin type. Finish with head, arm and shoulder massage.",
           cost: 70,
         },
         {
-          subTreatName: "Blemish Relief Facial",
+          facialType: "Blemish Relief Facial",
           description:
             "Begin with examining and discussing specific concerns. Remove makeup and clean the face. Exfoliate and steam. Hot towel relaxation. Then massage and apply point pressure to promote blood circulation. Acne extraction and oxygenate the skin. Apply light therapy to kill bacteria and mask specifically for skin with acne. Finish with head, arm and shoulder massage.",
           cost: 80,
         },
         {
-          subTreatName: "Skin Lifting & Rejuvenating Facial",
+          facialType: "Skin Lifting & Rejuvenating Facial",
           description:
             "Begin with examining and discussing specific concerns. Remove makeup and clean the face. Exfoliate and steam. Remove oil and impurities. Hot towel relaxation. Then massage and apply point pressure to promote blood circulation. Microcurrent facial lift using the special machine. Apply a collagen mask and oxygenate the skin. Finish with head, arm, and shoulder massage.",
           cost: 90,
@@ -35,7 +35,18 @@ export default function Services() {
       </div>
       <div>
         {facialTreatments.map((facialTreatment, idx) => (
-          <div key={idx}>{facialTreatment.serviceName}</div>
+          <div key={idx}>
+            {facialTreatment.serviceTitle} <br />{" "}
+            {facialTreatment.serviceSubtitle} <br />
+            {facialTreatment.facialTmnt.map((sub, idx) => (
+              <li key={idx}>
+                {sub.facialType}
+                <br />
+                {sub.description} <br />
+                {sub.cost}
+              </li>
+            ))}
+          </div>
         ))}
       </div>
     </>
