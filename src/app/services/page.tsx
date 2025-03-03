@@ -140,10 +140,12 @@ export default function Services() {
         <p>All nature skincare products are used for long-term results.</p>
         <div>
           {facialPackages.map((item, index) => (
-            <li className="flex" key={index}>
-              {item.facialType}
-              <hr />
-              {item.cost}
+            <li className="flex justify-between items-center" key={index}>
+              <div className="block">{item.facialType}</div>
+              <div className="flex-grow mx-2">
+                <hr />
+              </div>
+              <div>{item.cost}</div>
             </li>
           ))}
         </div>
