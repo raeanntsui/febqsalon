@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${lexend.variable} antialiased`}>
         <Header />
-        <CallButton />
+        {/* <CallButton /> */}
         {children}
         <Footer />
       </body>

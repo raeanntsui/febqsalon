@@ -195,6 +195,77 @@ export default function Services() {
           </li>
         ))}
       </div>
+
+      <div className="">
+        <h1 className="text-xl font-bold underline underline-offset-2 text-red-500 py-4 ">
+          DIPPING POWDER
+        </h1>
+        {dippingPowder.map((item, index) => (
+          <li className="flex justify-between items-center" key={index}>
+            <div className="block font-bold">{item.title}</div>{" "}
+            <div className="flex-grow mx-3">
+              <hr />
+            </div>
+            <p className="block font-bold">
+              {item.startingPrice ? `$${item.cost}+` : `$${item.cost}`}
+            </p>
+          </li>
+        ))}
+      </div>
+
+      <div>
+        {" "}
+        <h1 className="text-xl font-bold underline underline-offset-2 text-red-500 py-4 ">
+          PEDICURE
+        </h1>
+        {pedicures.map((item, index) => (
+          <>
+            <li className="flex justify-between items-center" key={index}>
+              <div className="block font-bold py-3">{item.title}</div>
+              <div className="flex-grow mx-3">
+                <hr />
+              </div>
+
+              <p className="font-bold">${item.cost}</p>
+            </li>
+            <p>{item.description}</p>
+          </>
+        ))}
+      </div>
+
+      <div className="">
+        <h1 className="text-xl font-bold underline underline-offset-2 text-red-500 py-4 ">
+          HAIR CUTS
+        </h1>
+        {hairCuts.map((item, index) => (
+          <li className="flex justify-between items-center" key={index}>
+            <div className="block font-bold">{item.title}</div>{" "}
+            <div className="flex-grow mx-3">
+              <hr />
+            </div>
+            <p className="block font-bold">
+              {item.startingPrice ? `$${item.cost}+` : `$${item.cost}`}
+            </p>
+          </li>
+        ))}
+      </div>
+
+      <div className="">
+        <h1 className="text-xl font-bold underline underline-offset-2 text-red-500 py-4 ">
+          WAXING SERVICES
+        </h1>
+        {waxingServices.map((item, index) => (
+          <li className="flex justify-between items-center" key={index}>
+            <div className="block font-bold">{item.title}</div>{" "}
+            <div className="flex-grow mx-3">
+              <hr />
+            </div>
+            <p className="block font-bold">
+              {item.startingPrice ? `$${item.cost}+` : `$${item.cost}`}
+            </p>
+          </li>
+        ))}
+      </div>
     </>
   );
 }
