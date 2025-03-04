@@ -14,8 +14,8 @@ export default function Header() {
   return (
     <>
       <div className="flex flex-row justify-between items-center bg-[#E2D0BE] sticky top-0 z-10">
-        {linksLeft.map((link, idx) => (
-          <Link href={link.url} key={idx} className="font-bold">
+        {linksLeft.map((link, index) => (
+          <Link href={link.url} key={index} className="font-bold">
             {link.name}
           </Link>
         ))}
@@ -28,8 +28,8 @@ export default function Header() {
             src="/qninebeautysalonlogo-transparent.png"
           />
         </Link>
-        {linksRight.map((link, idx) => (
-          <Link href={link.url} key={idx} className="font-bold">
+        {linksRight.map((link, index) => (
+          <Link href={link.url} key={index} className="font-bold">
             {link.name}
           </Link>
         ))}
