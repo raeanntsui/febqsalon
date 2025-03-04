@@ -144,7 +144,7 @@ export default function Services() {
         </p>
 
         {facialPackages.map((item, index) => (
-          <div>
+          <div key={index}>
             <li className="flex justify-between items-center" key={index}>
               <div className="block font-bold py-3">{item.facialType}</div>
               <div className="flex-grow mx-3">
