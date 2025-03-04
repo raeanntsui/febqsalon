@@ -176,17 +176,23 @@ export default function Services() {
       </div>
 
       <div className="">
+        <h1 className="text-xl font-bold underline underline-offset-2 text-red-500 py-4 ">
+          ADD-ONS
+        </h1>
         {addOns.map((item, index) => (
-          <div key={index}>
-            <div>{item.title}</div>
-            <p>
+          <li className="flex justify-between items-center" key={index}>
+            <div className="block font-bold">{item.title}</div>{" "}
+            <div className="flex-grow mx-3">
+              <hr />
+            </div>
+            <p className="block font-bold">
               {item.priceRange
                 ? `$${item.priceRange[0]} - $${item.priceRange[1]}`
                 : item.startingPrice
                 ? `$${item.cost}+`
                 : `$${item.cost}`}
             </p>
-          </div>
+          </li>
         ))}
       </div>
     </>
