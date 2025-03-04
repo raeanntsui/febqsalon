@@ -161,8 +161,8 @@ export default function Services() {
       </h1>
       <div>
         {manicures.map((item, index) => (
-          <div key={index}>
-            <li className="flex justify-between items-center">
+          <>
+            <li className="flex justify-between items-center" key={index}>
               <div className="block font-bold py-3">{item.title}</div>
               <div className="flex-grow mx-3">
                 <hr />
@@ -171,7 +171,7 @@ export default function Services() {
               <p className="font-bold">${item.cost}</p>
             </li>
             <p>{item.description}</p>
-          </div>
+          </>
         ))}
       </div>
 
