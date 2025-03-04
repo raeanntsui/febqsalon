@@ -132,23 +132,62 @@ export default function Services() {
   return (
     <>
       <div className="flex items-center my-4">
-        <h2 className="text-center py-4 font-bold text-2xl">SERVICES</h2>
+        <h2 className="text-center py-2 font-bold text-2xl">SERVICES</h2>
         <hr className="flex-grow border-t-2 border-gray-300 mx-4" />
       </div>
-      <div>
-        <h1>FACIALS</h1>
-        <p>All nature skincare products are used for long-term results.</p>
-        <div>
-          {facialPackages.map((item, index) => (
+      <div className="py-4">
+        <h1 className="text-xl font-bold underline underline-offset-2 text-red-500 ">
+          FACIALS
+        </h1>
+        <p className="text-xs">
+          All nature skincare products are used for long-term results.
+        </p>
+
+        {facialPackages.map((item, index) => (
+          <div>
             <li className="flex justify-between items-center" key={index}>
-              <div className="block">{item.facialType}</div>
-              <div className="flex-grow mx-2">
+              <div className="block font-bold py-3">{item.facialType}</div>
+              <div className="flex-grow mx-3">
                 <hr />
               </div>
-              <div>{item.cost}</div>
+              <div className="font-bold">${item.cost}</div>
             </li>
-          ))}
-        </div>
+            <p>{item.description}</p>
+          </div>
+        ))}
+      </div>
+      <h1 className="text-xl font-bold underline underline-offset-2 text-red-500 py-4 ">
+        MANICURE
+      </h1>
+      <div>
+        {manicures.map((item, index) => (
+          <>
+            <li className="flex justify-between items-center" key={index}>
+              <div className="block font-bold py-3">{item.title}</div>
+              <div className="flex-grow mx-3">
+                <hr />
+              </div>
+
+              <p className="font-bold">${item.cost}</p>
+            </li>
+            <p>{item.description}</p>
+          </>
+        ))}
+      </div>
+
+      <div className="">
+        {addOns.map((item, index) => (
+          <div key={index}>
+            <div>{item.title}</div>
+            <p>
+              {item.priceRange
+                ? `$${item.priceRange[0]} - $${item.priceRange[1]}`
+                : item.startingPrice
+                ? `$${item.cost}+`
+                : `$${item.cost}`}
+            </p>
+          </div>
+        ))}
       </div>
     </>
   );

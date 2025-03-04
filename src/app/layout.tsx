@@ -10,6 +10,9 @@ const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 export const metadata: Metadata = {
   title: "Nine Hair and Nails Salon",
   description: "We hope you stop by for your next appointment!",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
