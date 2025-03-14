@@ -6,17 +6,17 @@ import "react-medium-image-zoom/dist/styles.css";
 import "./styles.css";
 import ImageCarousel from "./components/swiper";
 
-export default function Home() {
-  const services = [
-    { name: "Facial", image: "/home-facial.jpg" },
-    { name: "Manicure", image: "/home-manicure.jpg" },
-    { name: "Dipping Powder", image: "/home-dp.jpg" },
-    { name: "Pedicure", image: "/home-pedi.jpg" },
-    { name: "Hair Cut", image: "/home-hc.png" },
-    { name: "Waxing", image: "/home-waxing.jpg" },
-    { name: "Eyelash Extension", image: "/home-ee.jpg" },
-  ];
+export const services = [
+  { name: "Facial", image: "/home-facial.jpg" },
+  { name: "Manicure", image: "/home-manicure.jpg" },
+  { name: "Dipping Powder", image: "/home-dp.jpg" },
+  { name: "Pedicure", image: "/home-pedi.jpg" },
+  { name: "Hair Cut", image: "/home-hc.png" },
+  { name: "Waxing", image: "/home-waxing.jpg" },
+  { name: "Eyelash Extension", image: "/home-ee.jpg" },
+];
 
+export const GalleryZoom = () => {
   const gallerySample = [
     { image: "/home-sample-1.jpg", altText: "Men's haircut back view" },
     { image: "/home-sample-2.jpg", altText: "Hair before and after treatment" },
@@ -31,41 +31,41 @@ export default function Home() {
     { image: "/home-sample-11.jpg", altText: "Straight hair cut" },
     { image: "/home-sample-12.jpg", altText: "Hair cut and styled with curls" },
   ];
-
-  const GalleryZoom = () => {
-    return (
-      <div className="grid grid-cols-4 grid-rows-3 gap-3">
-        {gallerySample.map((gallerySq, index) => (
-          <Zoom key={index}>
-            <div className="relative group">
-              <Image
-                alt={gallerySq.altText}
-                width={500}
-                height={500}
-                src={gallerySq.image}
-                className="rounded-md "
-              />
-              <div className="absolute bottom-1/2 left-1/2 hidden group-hover:block">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="white"
-                  viewBox="0 0 24 24"
-                  strokeWidth="3"
-                  stroke="currentColor"
-                  className="size-6">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607ZM10.5 7.5v6m3-3h-6"
-                  />
-                </svg>
-              </div>
+  return (
+    <div className="grid grid-cols-4 grid-rows-3 gap-3">
+      {gallerySample.map((gallerySq, index) => (
+        <Zoom key={index}>
+          <div className="relative group">
+            <Image
+              alt={gallerySq.altText}
+              width={500}
+              height={500}
+              src={gallerySq.image}
+              className="rounded-md "
+            />
+            <div className="absolute bottom-1/2 left-1/2 hidden group-hover:block">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 24 24"
+                strokeWidth="3"
+                stroke="currentColor"
+                className="size-6">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607ZM10.5 7.5v6m3-3h-6"
+                />
+              </svg>
             </div>
-          </Zoom>
-        ))}
-      </div>
-    );
-  };
+          </div>
+        </Zoom>
+      ))}
+    </div>
+  );
+};
+
+export default function Home() {
   return (
     <>
       {/* <Head>
