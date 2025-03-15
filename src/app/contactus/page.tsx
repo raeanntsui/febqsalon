@@ -1,4 +1,5 @@
 import Image from "next/image";
+import GoogleMaps from "../components/GoogleMaps";
 export default function ContactUs() {
   const contactInfo = [
     {
@@ -67,7 +68,9 @@ export default function ContactUs() {
           )}
           <button>Send Message</button>
         </div>
-        <div>Placeholder for Google Maps</div>
+        <div>
+          <GoogleMaps />
+        </div>
       </div>
     </>
   );
