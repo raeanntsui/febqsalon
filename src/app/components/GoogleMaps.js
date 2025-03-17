@@ -1,4 +1,4 @@
-"use client";
+"use client"; // must be ran client side due to vis.gl's design
 import React from "react";
 import { APIProvider, Map, Pin } from "@vis.gl/react-google-maps";
 
@@ -22,3 +22,5 @@ export default function GoogleMaps() {
     </>
   );
 }
+
+// check if api is loading correctly

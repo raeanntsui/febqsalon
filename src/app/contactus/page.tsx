@@ -32,8 +32,8 @@ export default function ContactUs() {
         <hr className="flex-grow border-t-2 border-gray-300 mx-4" />
       </div>
       <div className="flex flex-row ">
-        {contactInfo.map((card, idx) => (
-          <div key={idx} className="flex flex-row">
+        {contactInfo.map((card, index) => (
+          <div key={index} className="flex flex-row">
             <div className="">
               <Image
                 className=""
@@ -53,14 +53,14 @@ export default function ContactUs() {
       <div className="flex flex-row items-center justify-around">
         <div>
           <h1>Send Message</h1>
-          {messageBox.map((field, idx) =>
+          {messageBox.map((field, index) =>
             field.title === "Your Message" ? (
-              <div key={idx}>
+              <div key={index}>
                 <p>{field.title}</p>
                 <textarea placeholder={field.title}></textarea>
               </div>
             ) : (
-              <div key={idx}>
+              <div key={index}>
                 <p>{field.title}</p>
                 <input placeholder={field.title} type="text" />
               </div>
