@@ -1,28 +1,27 @@
-"use client";
+"use client"; // google maps api only works in browser -- must use client
 import React from "react";
-import { APIProvider, Map } from "@vis.gl/react-google-maps";
+import { APIProvider, Map, Pin } from "@vis.gl/react-google-maps";
 
 export default function GoogleMaps() {
-  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  // const marker = google.maps.LatLngLiteral;
 
-  if (!googleMapsApiKey) {
+  if (!API_KEY) {
     throw new Error("No Google Maps API key exists");
   }
-
   return (
-    <>
-      <div className="font-extrabold text-red-500">
-        <p>GOOGLE MAPS COMPONENT HERE</p>
-        <div>
-          <APIProvider
-            apiKey={googleMapsApiKey}
-            onLoad={() => console.log("Google Maps API loaded")}>
-            <Map
-              defaultZoom={13}
-              defaultCenter={{ lat: 37.352291, lng: -122.012169 }}></Map>
-          </APIProvider>
-        </div>
+    <APIProvider
+      apiKey={API_KEY}
+      onLoad={() => console.log("Google Maps API loaded")}>
+      <div className="w-full h-screen">
+        <Map
+          defaultZoom={15}
+          defaultCenter={{ lat: 37.352291, lng: -122.012169 }}
+          gestureHandling={"cooperative"}
+          disableDefaultUI={false}>
+          {/* <Pin location={{ lat: 37.352291, lng: -122.012169 }} /> */}
+        </Map>
       </div>
-    </>
+    </APIProvider>
   );
 }

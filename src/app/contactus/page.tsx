@@ -4,7 +4,6 @@ import GoogleMaps from "../components/GoogleMaps";
 export default function ContactUs() {
   const contactInfo = [
     {
-      // image: "/icons8-address-48.png",
       image: "./google-maps.svg",
       title: "Our Location",
       info: "942 E El Camino Real, Sunnyvale, CA 94807",
@@ -37,18 +36,17 @@ export default function ContactUs() {
         {contactInfo.map((card, index) => (
           <div
             key={index}
-            className="flex flex-row  w-full justify-center py-4">
-            <div className="pr-4">
-              <Image
-                className=""
-                src={card.image}
-                alt={card.title}
-                width={48}
-                height={48}
-              />
-            </div>
-            <div className="">
-              <div>{card.title}</div>
+            className="flex flex-row  w-full justify-center items-start py-4 gap-4">
+            <Image
+              src={card.image}
+              alt={card.title}
+              width={48}
+              height={48}
+              className="object-contain"
+              objectFit="contain"
+            />
+            <div>
+              <div className="font-bold text-lg">{card.title}</div>
               <div>{card.info}</div>
             </div>
           </div>
