@@ -3,17 +3,18 @@ import GoogleMaps from "../components/GoogleMaps";
 export default function ContactUs() {
   const contactInfo = [
     {
-      image: "/icons8-address-48.png",
+      // image: "/icons8-address-48.png",
+      image: "./google-maps.svg",
       title: "Our Location",
       info: "942 E El Camino Real, Sunnyvale, CA 94807",
     },
     {
-      image: "/icons8-store-48.png",
+      image: "/gmail.png",
       title: "Email Us",
       info: "qninebeautysalon@gmail.com",
     },
     {
-      image: "/icons8-new-contact-48.png",
+      image: "/phone-call.png",
       title: "Call Us",
       info: "669-649-9639",
     },
@@ -31,10 +32,12 @@ export default function ContactUs() {
         <h2 className="text-center py-2 font-bold text-2xl">CONTACT US</h2>
         <hr className="flex-grow border-t-2 border-gray-300 mx-4" />
       </div>
-      <div className="flex flex-row ">
+      <div className="flex flex-row justify-around">
         {contactInfo.map((card, index) => (
-          <div key={index} className="flex flex-row">
-            <div className="">
+          <div
+            key={index}
+            className="flex flex-row  w-full justify-center py-4">
+            <div className="pr-4">
               <Image
                 className=""
                 src={card.image}
@@ -50,25 +53,34 @@ export default function ContactUs() {
           </div>
         ))}
       </div>
+
       <div className="flex flex-row items-center justify-around">
-        <div>
-          <h1>Send Message</h1>
+        <div className="p-4 w-full">
+          <h1 className="text-lg font-bold">Send Us A Message!</h1>
           {messageBox.map((field, index) =>
             field.title === "Your Message" ? (
-              <div key={index}>
-                <p>{field.title}</p>
-                <textarea placeholder={field.title}></textarea>
+              <div
+                className="border-solid border-3 border-green-600"
+                key={index}>
+                <p className="font-bold">{field.title}</p>
+                <textarea
+                  className="border-solid border-2 w-full px-2 pb-4 pt-2"
+                  placeholder={field.title}></textarea>
               </div>
             ) : (
               <div key={index}>
-                <p>{field.title}</p>
-                <input placeholder={field.title} type="text" />
+                <p className="font-bold">{field.title}</p>
+                <input
+                  className="border-solid border-2 w-full p-2"
+                  placeholder={field.title}
+                  type="text"
+                />
               </div>
             )
           )}
           <button>Send Message</button>
         </div>
-        <div>
+        <div className=" w-full flex justify-center">
           <GoogleMaps />
         </div>
       </div>
