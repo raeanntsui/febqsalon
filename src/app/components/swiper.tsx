@@ -26,6 +26,7 @@ export default function ImageCarousel() {
       {homeBannerImages.map((banner, index) => (
         <SwiperSlide key={index}>
           <Image
+            priority
             src={banner.url}
             width={500}
             height={500}

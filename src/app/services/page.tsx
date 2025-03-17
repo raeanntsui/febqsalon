@@ -219,8 +219,8 @@ export default function Services() {
           PEDICURE
         </h1>
         {pedicures.map((item, index) => (
-          <>
-            <li className="flex justify-between items-center" key={index}>
+          <div key={index}>
+            <li className="flex justify-between items-center">
               <div className="block font-bold py-3">{item.title}</div>
               <div className="flex-grow mx-3">
                 <hr />
@@ -229,7 +229,7 @@ export default function Services() {
               <p className="font-bold">${item.cost}</p>
             </li>
             <p>{item.description}</p>
-          </>
+          </div>
         ))}
       </div>
 

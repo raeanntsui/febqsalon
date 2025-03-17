@@ -21,6 +21,7 @@ export default function Header() {
         ))}
         <Link href="/">
           <Image
+            priority
             width={100}
             height={100}
             alt="home"
