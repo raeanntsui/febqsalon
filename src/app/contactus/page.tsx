@@ -1,5 +1,6 @@
 import Image from "next/image";
 import GoogleMaps from "../components/GoogleMaps";
+
 export default function ContactUs() {
   const contactInfo = [
     {
