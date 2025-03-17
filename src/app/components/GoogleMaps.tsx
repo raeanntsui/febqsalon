@@ -3,7 +3,12 @@ import React from "react";
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
 
 export default function GoogleMaps() {
-  const googleMapsApiKey = "AIzaSyCI8eVcBIFb5YWe6PyPpXY-62AFtRJSqLo";
+  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+
+  if (!googleMapsApiKey) {
+    throw new Error("No Google Maps API key exists");
+  }
+
   return (
     <>
       <div className="font-extrabold text-red-500">
