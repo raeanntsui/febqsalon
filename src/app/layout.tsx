@@ -22,10 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${lexend.variable} antialiased`}>
+      <body
+        className={`${lexend.variable} antialiased flex flex-col min-h-screen`}>
         <Header />
         <CallButton />
-        {children}
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>
