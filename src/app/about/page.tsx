@@ -6,7 +6,7 @@ export default function About() {
         <h2 className="text-center py-4 font-bold text-2xl">ABOUT US</h2>
         <hr className="flex-grow border-t-2 border-gray-300 mx-4" />
       </div>
-      <div className="flex border-2 py-4 gap-x-6">
+      <div className="flex py-4 gap-x-6">
         <div className="w-3/4 ">
           <div className=" flex items-center gap-4 place-content-center py-3 ">
             <svg
