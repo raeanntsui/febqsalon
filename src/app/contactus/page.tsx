@@ -7,16 +7,19 @@ export default function ContactUs() {
       image: "./google-maps.svg",
       title: "Our Location",
       info: "942 E El Camino Real, Sunnyvale, CA 94807",
+      a: "https://maps.app.goo.gl/ga34kBnVyFwGebtJ9",
     },
     {
       image: "/gmail.png",
       title: "Email Us",
       info: "qninebeautysalon@gmail.com",
+      a: "mailto:qninebeautysalon@gmail.com",
     },
     {
       image: "/phone-call.png",
       title: "Call Us",
       info: "669-649-9639",
+      a: "tel:+6696499639",
     },
   ];
 
@@ -34,7 +37,8 @@ export default function ContactUs() {
       </div>
       <div className="flex flex-row justify-around">
         {contactInfo.map((card, index) => (
-          <div
+          <a
+            href={card.a}
             key={index}
             className="flex flex-row  w-full justify-center items-start py-4 gap-4">
             <Image
@@ -49,7 +53,7 @@ export default function ContactUs() {
               <div className="font-bold text-lg">{card.title}</div>
               <div>{card.info}</div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
 

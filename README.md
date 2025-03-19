@@ -1,6 +1,10 @@
 # TODO
 
-- [] investigate source map error: request failed with status 404
-- [] fix issue with logo image sizing
-- [] research google maps api
+- [] Add pin to Google Maps on /contactus page
+- [] research drizzle orm
 - [] research google email authenticator
+
+# Features to Add
+
+- [] login (google or phone number)
+- [] create appointments
