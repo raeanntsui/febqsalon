@@ -19,7 +19,7 @@ export default function GoogleMaps() {
           defaultCenter={{ lat: 37.352291, lng: -122.012169 }}
           gestureHandling={"cooperative"}
           disableDefaultUI={false}>
-          {/* <Pin location={{ lat: 37.352291, lng: -122.012169 }} /> */}
+          {/* <Pin /> */}
         </Map>
       </div>
     </APIProvider>
