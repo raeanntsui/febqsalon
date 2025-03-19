@@ -6,9 +6,9 @@ export default function About() {
         <h2 className="text-center py-4 font-bold text-2xl">ABOUT US</h2>
         <hr className="flex-grow border-t-2 border-gray-300 mx-4" />
       </div>
-      <div className="grid grid-cols-2 grid-rows-1 py-4 gap-x-6">
-        <div>
-          <div className="flex items-center gap-4 place-content-center py-3">
+      <div className="flex py-4 gap-x-6">
+        <div className="w-3/4 ">
+          <div className=" flex items-center gap-4 place-content-center py-3 ">
             <svg
               className="object-center w-10 class-5"
               xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ export default function About() {
             Nine Hair & Nails Salon- where you feel unique and special!{" "}
           </span>
         </div>
-        <div>
+        <div className="w-1/4 ">
           <Image src="/about.png" alt="about-photo" width={500} height={500} />
         </div>
       </div>
