@@ -1,5 +1,9 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import MobileHeader from "../components/MobileHeader";
+
 export default function Header() {
   const linksLeft = [
     { name: "Home", url: "/" },
@@ -11,9 +15,11 @@ export default function Header() {
     { name: "Gallery", url: "/gallery" },
     { name: "Contact Us", url: "/contactus" },
   ];
+
   return (
     <>
-      <div className="flex flex-row justify-between items-center bg-[#E2D0BE] sticky top-0 z-10">
+      <MobileHeader />
+      <div className="hidden md:flex flex-row justify-between items-center bg-[#E2D0BE] sticky top-0 z-10">
         {linksLeft.map((link, index) => (
           <Link href={link.url} key={index} className="font-bold">
             {link.name}
