@@ -5,6 +5,7 @@ import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 import "./styles.css";
 import ImageCarousel from "./components/swiper";
+import MainPageContactInfo from "./components/MainPageContactInfo";
 
 export const services = [
   { name: "Facial", image: "/home-facial.jpg" },
@@ -169,61 +170,9 @@ export default function Home() {
         <hr className="flex-grow border-t-2 border-gray-300 my-4" />
       </div>
 
-      <div className="grid grid-cols-2 grid-rows-1 py-4 gap-x-6">
-        <div>
-          <GalleryZoom />
-        </div>
-        <div className="">
-          <div>
-            <h1 className="text-center font-bold text-lg">
-              NINE HAIR & NAILS SALON
-            </h1>
-          </div>
-          <section className="max-w-md mt-6">
-            <h2 className="font-semibold mb-2">Location 01</h2>
-
-            <div className="flex justify-start gap-5">
-              <div className="font-semibold w-20">
-                Address <br />
-                Phone <br />
-                Email <br />
-              </div>
-              <div>
-                942 E El Camino Real, Sunnyvale, CA 94087 <br />
-                669-649-9639 <br />
-                qninebeautysalon@gmail.com
-              </div>
-            </div>
-          </section>
-
-          <section className="max-w-md mt-6">
-            <h2 className="font-semibold mb-2 ">Location 02</h2>
-            <div className="flex justify-start gap-5">
-              <div className="font-semibold w-20">
-                Address <br />
-                Phone <br />
-              </div>
-              <div>
-                938 E El Camino Real, Sunnyvale, CA 94087 <br />
-                408-739-2960
-              </div>
-            </div>
-          </section>
-
-          <section className="max-w-md mt-6">
-            <h1 className="font-semibold mb-2">BUSINESS HOURS</h1>
-            <div className="flex justify-start gap-5">
-              <div className="font-semibold w-20">
-                Mon - Sat <br />
-                Sunday
-              </div>
-              <div>
-                10:00am to 7:00pm <br />
-                Closed
-              </div>
-            </div>
-          </section>
-        </div>
+      <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-1 py-4 gap-x-6">
+        <GalleryZoom />
+        <MainPageContactInfo />
       </div>
     </>
   );
