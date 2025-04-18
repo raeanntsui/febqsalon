@@ -170,7 +170,7 @@ export default function Home() {
         <hr className="flex-grow border-t-2 border-gray-300 my-4" />
       </div>
 
-      <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-1 py-4 gap-x-6">
+      <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-1 py-4 gap-6">
         <GalleryZoom />
         <MainPageContactInfo />
       </div>
